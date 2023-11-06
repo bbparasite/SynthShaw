@@ -26,19 +26,24 @@
     }
 
     @media screen and (max-height: 450px) {
-        .sidenav {padding-top: 15px;}
-        .sidenav a {font-size: 18px;}
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
     }
 
-    #offset-nav{
+    #offset-nav {
         padding-left: 50px;
     }
 </style>
 
 <div id="mySidenav" class="sidenav">
-  <a href="#">Home</a>
-  <a href="#" id="offset-nav">Create</a>
-  <a href="#">Family</a>
-  <a href="#" id="offset-nav">Gallery</a>
-  <a href="#">lnfo</a>
+    <a href="index.php">Home</a>
+    <a href="#" id="offset-nav">Create</a>
+    <a href="#">Family</a>
+    <a href="#" id="offset-nav">Gallery</a>
+    <a href="#">lnfo</a>
 </div>
