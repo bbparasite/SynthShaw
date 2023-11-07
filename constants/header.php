@@ -1,6 +1,6 @@
 <!-- header text -->
 <style>
-    h1{
+    h1 {
         font-family: "Margarine";
         padding: 10px;
         padding-left: 50px;
@@ -10,8 +10,8 @@
 </style>
 
 <main>
-    <?php 
-        $headerName = "SynthShaw";
-        echo "<h1>".$headerName."</h1>";
+    <?php
+    $headerName = "SynthShaw";
+    echo "<h1>" . $headerName . "</h1>";
     ?>
 </main>

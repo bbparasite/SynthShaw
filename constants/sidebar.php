@@ -11,6 +11,7 @@
         overflow-x: hidden;
         padding-top: 50px;
         font-family: "Margarine";
+
     }
 
     .sidenav a {
@@ -19,6 +20,12 @@
         font-size: 35px;
         color: black;
         display: block;
+    }
+
+    .sidenav p {
+        /* used for inactive links */
+        font-size: 35px;
+        color: grey;
     }
 
     .sidenav a:hover {
@@ -42,8 +49,8 @@
 
 <div id="mySidenav" class="sidenav">
     <a href="index.php">Home</a>
-    <a href="#" id="offset-nav">Create</a>
-    <a href="#">Family</a>
+    <a href="create.php" id="offset-nav">Create</a>
+    <p><em>Family</em></p>
     <a href="gallery.php" id="offset-nav">Gallery</a>
-    <a href="#">lnfo</a>
+    <p><em>Info</em></p>
 </div>
