@@ -44,6 +44,6 @@
     <a href="index.php">Home</a>
     <a href="#" id="offset-nav">Create</a>
     <a href="#">Family</a>
-    <a href="#" id="offset-nav">Gallery</a>
+    <a href="gallery.php" id="offset-nav">Gallery</a>
     <a href="#">lnfo</a>
 </div>
