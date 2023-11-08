@@ -1,7 +1,7 @@
 <style>
     .footer {
-        position: absolute;
-        bottom: 30px;
+        position: fixed;
+        bottom: 0px;
         width: 100%;
     }
 </style>

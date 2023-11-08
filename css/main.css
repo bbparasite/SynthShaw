@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
 
 #intro {
+    text-align: left;
+    width: 60%;
     padding-left: 50px;
     padding-top: 50px;
     text-decoration: none;
