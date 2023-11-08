@@ -109,13 +109,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="album py-5 bg-white">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col gallery-item">
                     <div class="card shadow-sm">
                         <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/reDrawn.jpg">
@@ -125,13 +119,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="album py-5 bg-white">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col gallery-item">
                     <div class="card shadow-sm">
                         <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/smoothie.jpg">
