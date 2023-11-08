@@ -1,1 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+#intro {
+    padding-left: 50px;
+    padding-top: 50px;
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    display: block;
+
+}

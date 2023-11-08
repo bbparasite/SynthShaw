@@ -1,4 +1,3 @@
-<!-- header text -->
 <style>
     h1 {
         font-family: "Margarine";

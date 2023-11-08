@@ -48,9 +48,8 @@
 </style>
 
 <div id="mySidenav" class="sidenav">
-    <a href="index.php">Home</a>
+    <a href="index.php" id="offset-nav">Home</a>
+    <a href="info.php">lnfo</a>
     <a href="create.php" id="offset-nav">Create</a>
-    <p><em>Family</em></p>
-    <a href="gallery.php" id="offset-nav">Gallery</a>
-    <p><em>Info</em></p>
+    <a href="gallery.php">Gallery</a>
 </div>
