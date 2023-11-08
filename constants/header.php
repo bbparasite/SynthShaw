@@ -1,16 +1,13 @@
-<style>
-    h1 {
-        font-family: "Margarine";
-        padding: 10px;
-        padding-left: 50px;
-        margin: 10px;
-        font-size: 60px;
-    }
-</style>
-
 <main>
-    <?php
-    $headerName = "SynthShaw";
-    echo "<h1>" . $headerName . "</h1>";
-    ?>
+    <img id="header" src="../images/assets/synthshaw.jpg" width="450px" height="auto">
 </main>
+
+<script>
+    window.onload = function() {
+        document
+            .querySelector("#header")
+            .addEventListener("click", function() {
+                window.location.href = "index.php"
+            })
+    }
+</script>

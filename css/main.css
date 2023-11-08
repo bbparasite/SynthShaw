@@ -11,3 +11,7 @@
     display: block;
 
 }
+
+body {
+    cursor: url('../images/assets/cursor.png'), auto;
+}
