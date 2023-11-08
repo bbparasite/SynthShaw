@@ -105,7 +105,7 @@
                         <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/daptshaw.jpg">
                         <title>Placeholder</title><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
                         <div class="card-body">
-                            <p class="card-text">Blend by Evelyn Scrimshaw, 2023.</p>
+                            <p class="card-text">Blend by Evelyn Scrimshaw, with retouched text. 2023.</p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                         <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/reDrawn.jpg">
                         <title>Placeholder</title><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
                         <div class="card-body">
-                            <p class="card-text">Blend by Evelyn Scrimshaw, retouched by hand, 2023.</p>
+                            <p class="card-text">Blend by Evelyn Scrimshaw, retouched by hand. 2023.</p>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                         <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/smoothie.jpg">
                         <title>Placeholder</title><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
                         <div class="card-body">
-                            <p class="card-text">Blend by Evelyn Scrimshaw, 2023.</p>
+                            <p class="card-text">Blend by Evelyn Scrimshaw. 2023.</p>
                         </div>
                     </div>
                 </div>
