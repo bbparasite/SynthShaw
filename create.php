@@ -46,15 +46,12 @@
             .querySelector("#button")
             .addEventListener("click", function() {
                 console.log("button press");
-                makeFetchRequest();
+                sendBlendRequest();
             })
 
         clearSelection();
     };
 
-    const makeFetchRequest = async () => {
-
-    }
 
     //URLs of highlighted images
     let highlightedImages = [];
@@ -79,7 +76,7 @@
         console.log('Highlighted Images:', highlightedImages);
     }
 
-    // Add click event listener to all images with class 'blendable'
+    // Add click event listener to class 'blendable'
     const images = document.querySelectorAll('.blendable');
     images.forEach(image => {
         image.addEventListener('click', handleImageClick);
@@ -88,6 +85,34 @@
     function clearSelection() {
         highlightedImages = [];
         console.log('Array cleared:', highlightedImages);
+    }
+
+    function sendBlendRequest() {
+        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI4NSwiZW1haWwiOiJqZW5uYW1pbHlicm93bkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Implbm5hbWlseWJyb3duQGdtYWlsLmNvbSIsImlhdCI6MTY5OTM5MjUzMX0.9-5e0l-NJZgiFEtQ5d-cmuyH5zqJI-4VLWRa4bAZtfc';
+        const blendURL = "https://api.mymidjourney.ai/api/v1/midjourney/blend";
+
+        //Selected image URLs
+        const requestData = {
+
+            images: highlightedImages
+        };
+
+        // Making blend request to api
+        fetch(blendURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: apiKey,
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Blend request response:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
 </script>
 
