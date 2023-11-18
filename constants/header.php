@@ -1,5 +1,5 @@
 <main>
-    <img id="header" src="../images/assets/synthshaw.jpg" width="450px" height="auto">
+    <img id="header" src="./images/assets/synthshaw.jpg" width="450px" height="auto">
 </main>
 
 <script>
