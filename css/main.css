@@ -16,10 +16,15 @@
     color: black;
     display: block;
     font-family: 'myFirstFont';
+    line-height: 35px;
 
 }
 
 body {
     cursor: url('../images/assets/cursor.png'), auto;
 
+}
+
+a {
+    text-decoration: none;
 }
