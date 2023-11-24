@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
 
+@font-face {
+    font-family: 'myFirstFont';
+    src: url('../fonts/handFont.ttf')format('truetype'),
+        url('../fonts/handFont.otf')format("opentype");
+}
+
 #intro {
     text-align: left;
     width: 60%;
@@ -9,9 +15,11 @@
     font-size: 24px;
     color: black;
     display: block;
+    font-family: 'myFirstFont';
 
 }
 
 body {
     cursor: url('../images/assets/cursor.png'), auto;
+
 }

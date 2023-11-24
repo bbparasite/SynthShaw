@@ -10,22 +10,16 @@
         position: relative;
         overflow-x: hidden;
         padding-top: 50px;
-        font-family: "Margarine";
+        font-family: "myFirstFont";
 
     }
 
     .sidenav a {
         padding: 8px 8px 8px 8px;
         text-decoration: none;
-        font-size: 35px;
+        font-size: 40px;
         color: black;
         display: block;
-    }
-
-    .sidenav p {
-        /* used for inactive links */
-        font-size: 35px;
-        color: grey;
     }
 
     .sidenav a:hover {
