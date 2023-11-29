@@ -89,7 +89,7 @@
 
     function sendBlendRequest() {
         const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI4NSwiZW1haWwiOiJqZW5uYW1pbHlicm93bkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Implbm5hbWlseWJyb3duQGdtYWlsLmNvbSIsImlhdCI6MTY5OTM5MjUzMX0.9-5e0l-NJZgiFEtQ5d-cmuyH5zqJI-4VLWRa4bAZtfc';
-        const blendURL = "https://api.mymidjourney.ai/api/v1/midjourney/blend";
+        const blendURL = "https://api.mymidjourney.ai/api/v1/midjourney/blend/";
 
         //Selected image URLs
         const requestData = {

@@ -15,6 +15,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <!-- Above credits for Album example on Bootstrap (getbootstrap.com)-->
     <style>
+        .container{
+            margin-left: 0%;
+        }
+
         .gallery-item {
             cursor: pointer;
             overflow: hidden;
@@ -77,18 +81,6 @@
                 transform: scale(1);
             }
         }
-
-        @media (max-width: 950px) {
-            .album {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 550px) {
-            .album {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
     </style>
 </head>
 
@@ -97,41 +89,70 @@
     require('constants/header.php');
     require('constants/sidebar.php');
     ?>
-    <div class="album py-5 bg-white">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col gallery-item">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/daptshaw.jpg">
-                        <title>Placeholder</title><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
-                        <div class="card-body">
-                            <p class="card-text">Blend by Evelyn Scrimshaw, with retouched text. 2023.</p>
-                        </div>
-                    </div>
-                </div>
+    <?php
+    require_once __DIR__ . '/vendor/autoload.php';
+    //put into try catch clause
+    try {
+        //1: connect to mongodb atlas
+        $client = 
+        new MongoDB\Client(
+            "mongodb+srv://bbparasite:e7QTbOZ1SsA1wr7b@cart351.tiqjonx.mongodb.net/?retryWrites=true&w=majority"
+        
+        );
+        //2: connect to collection (that exists):
+        $collection = $client->CART351->SynthShawGallery;
 
-                <div class="col gallery-item">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/reDrawn.jpg">
-                        <title>Placeholder</title><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
-                        <div class="card-body">
-                            <p class="card-text">Blend by Evelyn Scrimshaw, retouched by hand. 2023.</p>
-                        </div>
-                    </div>
-                </div>
+        //3: find items
+        //b: all results 
+        $resultObject = $collection->find([]);
 
-                <div class="col gallery-item">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="images/blended/smoothie.jpg">
-                        <title>Placeholder</title><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
-                        <div class="card-body">
-                            <p class="card-text">Blend by Evelyn Scrimshaw. 2023.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        //4: display the items
+        echo"<div class='album py-5 bg-white'>";
+        echo"<div class='container'>";
+        echo"<div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>";
+        
+        foreach($resultObject as $galleryItem){
+        
+            //go through each doc
+        
+        echo "<div class='col gallery-item'>";
+        echo "<div class='card shadow-sm'>";
+        $imagePath = $galleryItem["imagePath"];
+        echo "<img class='card-img-top' width='100%' height='225' role='img' aria-label='Placeholder: Thumbnail' preserveAspectRatio='xMidYMid slice' focusable='false' src= $imagePath \>";
+        echo "<div class='card-body'>";
+        echo "<p class='card-text'>";
+
+        foreach($galleryItem as $key => $value)
+        {
+        if($key!="imagePath" && $key!="creationDate" && $key!="_id"){
+        
+        echo($value." ");
+        }
+        
+        if( $key=="creationDate"){
+            $dateTime = $value->toDateTime();
+            echo($dateTime->format('Y-m-d')." ");  
+        }
+        
+        
+        }
+        //end content
+        echo "</p>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        
+        }
+        //end gallery
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+    }
+    
+    catch (Exception $e) {
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+    ?>
     <?php
     require('constants/footer.php');
     ?>
