@@ -107,11 +107,83 @@
             It's not about the technology,<br>
 
             <b>It’s about how we use it.</b><br><br><br>
-        </p>
+        <p>
     </div>
 
     <?php
     require('constants/footer.php');
     ?>
+    <script>
+        window.onload = function(){
+                    document.querySelector("#header").addEventListener("click", function () {
+                window.location.href = "index.php";
+            });
 
+            let wordArr1 = [
+                "Synth",
+                "Scrim",
+                "Machine",
+                "Neural",
+                "Quantum",
+                "Autonomous",
+                "Drone",
+                "Augmented",
+                "Virtual",
+                "Data",
+                "Analytic",
+                "Cognitive",
+                "Synthetica",
+                "Swarm",
+                "Dream",
+                "Cyber",
+                "Bio",
+            ];
+
+            let wordArr2 = [
+                "Shaw",
+                "Brain",
+                "Bot",
+                "Cyborg",
+                "Machine",
+                "Soft",
+                "Cloud",
+                "Synthetica",
+                "Replicated",
+                "Generated",
+                "Sentience",
+                "Conscious",
+                "Bio",
+                "Meta",
+                "Punk",
+                "Flesh",
+                "Metal",
+            ];
+
+            let rand1 = Math.floor(Math.random() * 17);
+            let rand2 = Math.floor(Math.random() * 17);
+
+            let word1 = wordArr1[rand1];
+            let word2 = wordArr2[rand2];
+
+            let headerTxt = word1.concat(word2);
+
+            let header = document.querySelector("#header");
+
+            function textTypingEffect(element, text, i = 0) {
+                if (i === 0) {
+                element.innerHTML = " ";
+                }
+
+                element.innerHTML += text[i];
+
+                if (i === text.length - 1) {
+                return;
+                }
+
+                setTimeout(() => textTypingEffect(element, text, i + 1), 150);
+            }
+
+            textTypingEffect(header, headerTxt);
+        }
+    </script>
 </body>

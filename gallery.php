@@ -17,6 +17,7 @@
     <style>
         .container{
             margin-left: 0%;
+            display: flex;
         }
 
         .gallery-item {
