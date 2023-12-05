@@ -46,4 +46,5 @@
     <a href="info.php">lnfo</a>
     <a href="create.php" id="offset-nav">Create</a>
     <a href="gallery.php">Gallery</a>
+    <a href="https://c.ai/c/XSiup1OfFfY5X5zZKkBWyq12sp725y37CVIcy8j_4j4" id="offset-nav">Chat</a>
 </div>
