@@ -4,6 +4,7 @@
 <style>
     .highlight {
         border: 2px solid red;
+        line-height: 20px;
     }
 </style>
 
@@ -47,18 +48,6 @@
     <img src="blendables/toys.png" height="250px" width="auto" class="blendable">
     <img src="blendables/BATS.JPG" height="250px" width="auto" class="blendable">
     <img src="blendables/battersee.jpg" height="250px" width="auto" class="blendable">
-
-
-
-
-
-
-
-
-
-
-
-
 
     <?php
     require('constants/footer.php');
@@ -104,10 +93,12 @@
 
     //URLs of highlighted images
     let highlightedImages = [];
+    let highlightedElements = [];
 
 
     function handleImageClick(event) {
         const clickedImage = event.target;
+        highlightedElements.push(clickedImage);
 
         // Toggle highlighting and add/remove URL from the array
         if (clickedImage.classList.contains('highlight')) {
@@ -121,6 +112,13 @@
         } else {
             clickedImage.classList.add('highlight');
             highlightedImages.push(clickedImage.src);
+        }
+
+        if (highlightedImages.length > 5) {
+            highlightedElements[0].classList.remove("highlight");
+            console.log(highlightedImages[0].classList);
+            highlightedImages.shift();
+            highlightedElements.shift();
         }
         console.log('Highlighted Images:', highlightedImages);
     }
