@@ -27,10 +27,36 @@
 
     <button id="button"> Send request </button>
     <br>
+    <img src="blendables/scrim.jpg" height="250px" width="auto" class="blendable">
     <img src="blendables/Adapter.jpg" height="250px" width="auto" class="blendable">
-    <img src="blendables/Ev-1.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/collection2.jpg" height="250px" width="auto" class="blendable">
     <img src="blendables/pinch.png" height="250px" width="auto" class="blendable">
+    <img src="blendables/frank.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/trample.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/fish.jpg" height="250px" width="auto" class="blendable">
     <img src="blendables/wires.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/silver2.png" height="250px" width="auto" class="blendable">
+    <img src="blendables/hiss.jpeg" height="250px" width="auto" class="blendable">
+    <img src="blendables/bacon.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/collection1.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/handwash.png" height="250px" width="auto" class="blendable">
+    <img src="blendables/rfid.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/meateat.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/silver.png" height="250px" width="auto" class="blendable">
+    <img src="blendables/collection3.jpg" height="250px" width="auto" class="blendable">
+    <img src="blendables/toys.png" height="250px" width="auto" class="blendable">
+    <img src="blendables/BATS.JPG" height="250px" width="auto" class="blendable">
+    <img src="blendables/battersee.jpg" height="250px" width="auto" class="blendable">
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,15 +67,38 @@
 
 
 <script>
+    const imagesToBlend = null;
     window.onload = function() {
         document
             .querySelector("#button")
             .addEventListener("click", function() {
+                event.preventDefault();
                 console.log("button press");
                 sendBlendRequest();
             })
 
         clearSelection();
+
+        function sendBlendRequest() {
+            //send the urls to php...
+            let newObj = {};
+            newObj.urls = highlightedImages;
+            let data = JSON.stringify(newObj);
+
+            fetch('test_n.php', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "include",
+                    body: data
+                })
+                .then((response) => response.json())
+                .then((json) => {
+                    // you can do what ever you want here
+                    console.log(json)
+                })
+        }
     };
 
 
@@ -87,105 +136,45 @@
         console.log('Array cleared:', highlightedImages);
     }
 
-    function sendBlendRequest() {
-        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI4NSwiZW1haWwiOiJqZW5uYW1pbHlicm93bkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Implbm5hbWlseWJyb3duQGdtYWlsLmNvbSIsImlhdCI6MTY5OTM5MjUzMX0.9-5e0l-NJZgiFEtQ5d-cmuyH5zqJI-4VLWRa4bAZtfc';
-        const blendURL = "https://api.mymidjourney.ai/api/v1/midjourney/blend/";
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $_POST = json_decode(file_get_contents('php://input'), true);
+        $imageArray = $_POST['images'];
+        runBlend($imageArray);
 
-        //Selected image URLs
-        const requestData = {
-
-            images: highlightedImages
-        };
-
-        // Making blend request to api
-        fetch(blendURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: apiKey,
-                },
-                body: JSON.stringify(requestData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Blend request response:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        //var_dump($_POST);
+        exit();
     }
-</script>
 
-<script>
-    document.querySelector("#header").addEventListener("click", function () {
-                window.location.href = "index.php";
-            });
+    function runBlend($imageArray)
+    {
 
-            let wordArr1 = [
-                "Synth",
-                "Scrim",
-                "Machine",
-                "Neural",
-                "Quantum",
-                "Autonomous",
-                "Drone",
-                "Augmented",
-                "Virtual",
-                "Data",
-                "Analytic",
-                "Cognitive",
-                "Synthetica",
-                "Swarm",
-                "Dream",
-                "Cyber",
-                "Bio",
-            ];
+        $apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI4NSwiZW1haWwiOiJqZW5uYW1pbHlicm93bkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Implbm5hbWlseWJyb3duQGdtYWlsLmNvbSIsImlhdCI6MTY5OTM5MjUzMX0.9-5e0l-NJZgiFEtQ5d-cmuyH5zqJI-4VLWRa4bAZtfc';
 
-            let wordArr2 = [
-                "Shaw",
-                "Brain",
-                "Bot",
-                "Cyborg",
-                "Machine",
-                "Soft",
-                "Cloud",
-                "Synthetica",
-                "Replicated",
-                "Generated",
-                "Sentience",
-                "Conscious",
-                "Bio",
-                "Meta",
-                "Punk",
-                "Flesh",
-                "Metal",
-            ];
+        $url = 'https://api.mymidjourney.ai/api/v1/midjourney/blend';
 
-            let rand1 = Math.floor(Math.random() * 17);
-            let rand2 = Math.floor(Math.random() * 17);
+        $curl = curl_init();
 
-            let word1 = wordArr1[rand1];
-            let word2 = wordArr2[rand2];
+        $fields = array('urls' => $imageArray);
 
-            let headerTxt = word1.concat(word2);
+        $json_string = json_encode($fields);
 
-            let header = document.querySelector("#header");
+        curl_setopt($curl, CURLOPT_URL, $url);
 
-            function textTypingEffect(element, text, i = 0) {
-                if (i === 0) {
-                element.innerHTML = " ";
-                }
+        curl_setopt($curl, CURLOPT_POST, TRUE);
 
-                element.innerHTML += text[i];
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $json_string);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization:Bearer ' . $apiKey));
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-                if (i === text.length - 1) {
-                return;
-                }
+        $data = curl_exec($curl);
+        echo ($data);
 
-                setTimeout(() => textTypingEffect(element, text, i + 1), 150);
-            }
+        curl_close($curl);
+    }
 
-            textTypingEffect(header, headerTxt);
+
+    ?>
 </script>
 
 </html>
